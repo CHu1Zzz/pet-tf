@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__MiniMax__web_search",
+      "mcp__playwright__browser_navigate",
+      "mcp__MiniMaxImage__image_generation",
+      "WebFetch(domain:www.itch.io)",
+      "WebFetch(domain:itch.io)",
+      "Read(//d/MINIMAX-image/**)",
+      "Bash(dir \"D:\\\\MINIMAX-image\")",
+      "mcp__MiniMax__understand_image",
+      "Bash(curl -L -o \"D:/MINIMAX-image/new_mouse.jpeg\" \"https://minimax-algeng-chat-tts.oss-cn-wulanchabu.aliyuncs.com/ccv2%2F2026-04-26%2FMiniMax-M2.7%2F2029397524166480799%2Fb5743a249396be3c40761b3c761c9d8979a3caf95e15bb9a9da3ef21f7f3a925..jpeg?Expires=1777262104&OSSAccessKeyId=LTAI5tGLnRTkBjLuYPjNcKQ8&Signature=7fUi7O8AB0lnBRQDt31ykFgo2HI%3D\")",
+      "mcp__plugin_context7_context7__resolve-library-id",
+      "Bash(dir \"d:\\\\WX-Game\")",
+      "mcp__plugin_context7_context7__query-docs",
+      "Bash(dir \"d:\\\\WX-Game\\\\\" 2>/dev/null)"
+    ],
+    "additionalDirectories": [
+      "d:\\WX-Game\\docs\\superpowers"
+    ]
+  }
+}

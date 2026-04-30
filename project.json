@@ -1,0 +1,8 @@
+{
+  "engine": "cocos-creator-3d",
+  "packages": [
+    "cocos-creator"
+  ],
+  "version": "3.8.0",
+  "id": "pet-tower-defense"
+}

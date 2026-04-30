@@ -1,0 +1,18 @@
+{
+  "company_name": "PetStudio",
+  "company_short_name": "PetStudio",
+  "product_name": "Pet Tower Defense",
+  "product_short_name": "PetTowerDefense",
+  "云端上传代码": false,
+  "encrypt_dir": [],
+  "upload_config": {
+    "appid": "",
+    "target_platform": 0,
+    "platform": 0,
+    "app_version": "1.0.0",
+    "store_version": "1.0.0",
+    "version_code": "1.0.0",
+    "version_name": "1.0.0"
+  },
+  "次要配置": {}
+}

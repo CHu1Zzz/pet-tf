@@ -1,0 +1,40 @@
+{ "skeleton": { "images": "D:/WX-Game/image/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "head", "bone": "root", "attachment": "head" },
+	{ "name": "left-hand", "bone": "root", "attachment": "left-hand" },
+	{ "name": "left-leg", "bone": "root", "attachment": "left-leg" },
+	{ "name": "mouse1", "bone": "root", "attachment": "mouse1" },
+	{ "name": "right-hand", "bone": "root", "attachment": "right-hand" },
+	{ "name": "right-leg", "bone": "root", "attachment": "right-leg" },
+	{ "name": "tail", "bone": "root", "attachment": "tail" }
+],
+"skins": {
+	"default": {
+		"head": {
+			"head": { "x": -2, "y": 508, "width": 514, "height": 518 }
+		},
+		"left-hand": {
+			"left-hand": { "x": -262, "y": 391, "width": 348, "height": 340 }
+		},
+		"left-leg": {
+			"left-leg": { "x": -107, "y": 90, "width": 312, "height": 182 }
+		},
+		"mouse1": {
+			"mouse1": { "x": -17, "y": 247, "width": 336, "height": 290 }
+		},
+		"right-hand": {
+			"right-hand": { "x": 196, "y": 310, "width": 170, "height": 100 }
+		},
+		"right-leg": {
+			"right-leg": { "x": 124, "y": 98, "width": 262, "height": 198 }
+		},
+		"tail": {
+			"tail": { "x": -206, "y": 204, "width": 138, "height": 140 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

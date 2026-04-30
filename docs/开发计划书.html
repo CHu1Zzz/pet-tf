@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>宠物猫狗塔防游戏 MVP 开发计划</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #000000;
+      --light-gray: #f5f5f7;
+      --near-black: #1d1d1f;
+      --apple-blue: #0071e3;
+      --link-blue: #0066cc;
+      --white: #ffffff;
+      --text-secondary: rgba(0, 0, 0, 0.8);
+      --text-tertiary: rgba(0, 0, 0, 0.48);
+      --surface-dark: #272729;
+    }
+
+    body {
+      font-family: 'SF Pro Display', 'SF Pro Text', 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.47;
+      letter-spacing: -0.374px;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 48px;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    nav span {
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: -0.12px;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: var(--black);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 8vw, 56px);
+      font-weight: 600;
+      line-height: 1.07;
+      letter-spacing: -0.28px;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .hero .subtitle {
+      font-size: 21px;
+      font-weight: 400;
+      line-height: 1.19;
+      letter-spacing: 0.231px;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 32px;
+    }
+
+    .hero .meta {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.48);
+      margin-bottom: 40px;
+    }
+
+    .pill-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 24px;
+      border-radius: 980px;
+      font-size: 17px;
+      font-weight: 400;
+      text-decoration: none;
+      transition: all 150ms ease;
+    }
+
+    .pill-outline {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: var(--white);
+    }
+
+    .pill-outline:hover {
+      border-color: var(--white);
+    }
+
+    .pill-primary {
+      background: var(--apple-blue);
+      color: var(--white);
+      border: none;
+    }
+
+    .pill-primary:hover {
+      background: #0077ed;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 80px 24px;
+    }
+
+    .light-section {
+      background: var(--light-gray);
+    }
+
+    .dark-section {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .content-wrapper {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    /* Section Headers */
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: normal;
+      color: inherit;
+      margin-bottom: 12px;
+    }
+
+    .section-header p {
+      font-size: 17px;
+      color: var(--text-secondary);
+      line-height: 1.47;
+    }
+
+    .dark-section .section-header p {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Cards */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 32px;
+      box-shadow: rgba(0, 0, 0, 0.22) 3px 5px 30px 0px;
+    }
+
+    .dark-section .card {
+      background: var(--surface-dark);
+    }
+
+    .card h3 {
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1.19;
+      letter-spacing: 0.231px;
+      color: var(--near-black);
+      margin-bottom: 12px;
+    }
+
+    .dark-section .card h3 {
+      color: var(--white);
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .dark-section .card p {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .card .tag {
+      display: inline-block;
+      background: var(--apple-blue);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 5px;
+      margin-bottom: 16px;
+    }
+
+    /* Data Tables */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .data-table th,
+    .data-table td {
+      text-align: left;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      font-size: 14px;
+    }
+
+    .data-table th {
+      font-weight: 600;
+      color: var(--near-black);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .data-table td {
+      color: var(--text-secondary);
+    }
+
+    .light-section .data-table tr:nth-child(even) {
+      background: rgba(0, 0, 0, 0.02);
+    }
+
+    .dark-section .data-table th {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .dark-section .data-table td {
+      color: rgba(255, 255, 255, 0.8);
+      border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .dark-section .data-table tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Code/Structure Blocks */
+    .code-block {
+      background: var(--near-black);
+      border-radius: 8px;
+      padding: 24px;
+      overflow-x: auto;
+    }
+
+    .code-block pre {
+      font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.9);
+      margin: 0;
+    }
+
+    .code-block .comment {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .code-block .key {
+      color: #ff7b72;
+    }
+
+    .code-block .string {
+      color: #a5d6ff;
+    }
+
+    .code-block .number {
+      color: #79c0ff;
+    }
+
+    /* Flow Diagram */
+    .flow-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 40px 0;
+    }
+
+    .flow-step {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 16px 24px;
+      box-shadow: rgba(0, 0, 0, 0.22) 3px 5px 30px 0px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--near-black);
+    }
+
+    .dark-section .flow-step {
+      background: var(--surface-dark);
+      color: var(--white);
+    }
+
+    .flow-arrow {
+      color: var(--apple-blue);
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    /* Checklist */
+    .checklist {
+      list-style: none;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      font-size: 17px;
+      color: var(--text-secondary);
+    }
+
+    .dark-section .checklist li {
+      border-bottom-color: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .checklist li:last-child {
+      border-bottom: none;
+    }
+
+    .check-box {
+      width: 24px;
+      height: 24px;
+      border: 2px solid var(--apple-blue);
+      border-radius: 6px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--apple-blue);
+      font-size: 14px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--black);
+      color: rgba(255, 255, 255, 0.48);
+      text-align: center;
+      padding: 40px 24px;
+      font-size: 12px;
+    }
+
+    footer a {
+      color: var(--apple-blue);
+      text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      section {
+        padding: 56px 20px;
+      }
+
+      .card {
+        padding: 24px;
+      }
+
+      .flow-container {
+        flex-direction: column;
+      }
+
+      .flow-arrow {
+        transform: rotate(90deg);
+      }
+    }
+
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span>宠物猫狗塔防游戏 MVP 开发计划</span>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>宠物猫狗塔防游戏</h1>
+    <p class="subtitle">极致最小化 MVP 开发计划</p>
+    <p class="meta">版本 1.0 &nbsp;|&nbsp; 2026年4月26日 &nbsp;|&nbsp; Cocos Creator 2D</p>
+    <div class="pill-buttons">
+      <a href="#overview" class="pill pill-outline">查看计划</a>
+      <a href="#tech" class="pill pill-primary">技术架构</a>
+    </div>
+  </section>
+
+  <!-- Overview Section -->
+  <section id="overview" class="light-section">
+    <div class="content-wrapper">
+      <div class="section-header">
+        <h2>项目概述</h2>
+        <p>验证核心塔防玩法可行性的最小可行产品</p>
+      </div>
+
+      <h3 style="font-size: 21px; font-weight: 600; margin-bottom: 24px; color: #1d1d1f;">核心游戏循环</h3>
+      <div class="flow-container">
+        <div class="flow-step">点击地图</div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">放置猫塔</div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">敌人进攻</div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">塔攻击</div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">结果</div>
+      </div>
+
+      <div class="card-grid" style="margin-top: 48px;">
+        <div class="card">
+          <span class="tag">极简</span>
+          <h3>1 种防御塔</h3>
+          <p>猫塔 — 可爱猫咪造型，自动攻击范围内敌人</p>
+        </div>
+        <div class="card">
+          <span class="tag">极简</span>
+          <h3>1 种敌人</h3>
+          <p>单一怪物类型，沿固定路线移动</p>
+        </div>
+        <div class="card">
+          <span class="tag">极简</span>
+          <h3>1 波进攻</h3>
+          <p>10 个敌人，一次完整的游戏流程</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Architecture -->
+  <section id="tech" class="dark-section">
+    <div class="content-wrapper">
+      <div class="section-header">
+        <h2>技术架构</h2>
+        <p>基于 Cocos Creator 2D 的轻量级实现</p>
+      </div>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3>引擎选择</h3>
+          <p>Cocos Creator 2D 渲染模式<br>TypeScript 脚本<br>单场景架构</p>
+        </div>
+        <div class="card">
+          <h3>游戏循环</h3>
+          <p>基于 update(dt) 帧循环<br>敌人沿路径点移动<br>塔定时检测并发射子弹</p>
+        </div>
+        <div class="card">
+          <h3>碰撞检测</h3>
+          <p>圆形半径检测<br>子弹与敌人碰撞<br>简单高效</p>
+        </div>
+      </div>
+
+      <h3 style="font-size: 21px; font-weight: 600; margin: 48px 0 24px; color: #fff;">数据结构</h3>
+      <div class="code-block">
+        <pre><span class="comment">// 防御塔</span>
+{ x, y, range: <span class="number">150</span>, damage: <span class="number">10</span>, fireRate: <span class="number">1</span>s, lastFireTime }
+
+<span class="comment">// 敌人</span>
+{ x, y, hp: <span class="number">100</span>, maxHp, speed: <span class="number">50</span>px/s, pathIndex, hpBar }
+
+<span class="comment">// 波次</span>
+{ totalEnemies: <span class="number">10</span>, spawned, spawnTimer: <span class="number">1</span>s, enemies[] }
+
+<span class="comment">// 游戏状态</span>
+{ running, won: <span class="keyword">null</span>|<span class="keyword">true</span>|<span class="keyword">false</span>, placedTower, wave }</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Asset Requirements -->
+  <section class="light-section">
+    <div class="content-wrapper">
+      <div class="section-header">
+        <h2>美术资产需求</h2>
+        <p>最少资源，极致精简</p>
+      </div>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>资产类型</th>
+            <th>数量</th>
+            <th>规格</th>
+            <th>说明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>地图底图</td>
+            <td>1 张</td>
+            <td>960×540 PNG</td>
+            <td>固定路线显示</td>
+          </tr>
+          <tr>
+            <td>猫塔精灵</td>
+            <td>1 张</td>
+            <td>64×64 PNG</td>
+            <td>含待机/攻击动画 2-3 帧</td>
+          </tr>
+          <tr>
+            <td>敌人精灵</td>
+            <td>1 种</td>
+            <td>32×32 PNG</td>
+            <td>含移动动画 2 帧</td>
+          </tr>
+          <tr>
+            <td>子弹精灵</td>
+            <td>1 张</td>
+            <td>16×16 PNG</td>
+            <td>攻击投射物</td>
+          </tr>
+          <tr>
+            <td>胜利/失败文字</td>
+            <td>2</td>
+            <td>系统字体</td>
+            <td>Victory! / Defeat!</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Path Design -->
+  <section class="dark-section">
+    <div class="content-wrapper">
+      <div class="section-header">
+        <h2>路径设计</h2>
+        <p>固定单一路线路径</p>
+      </div>
+
+      <div class="code-block">
+        <pre>(<span class="number">0</span>, <span class="number">270</span>) → (<span class="number">200</span>, <span class="number">270</span>) → (<span class="number">200</span>, <span class="number">100</span>) → (<span class="number">600</span>, <span class="number">100</span>) → (<span class="number">600</span>, <span class="number">270</span>) → (<span class="number">960</span>, <span class="number">270</span>)</pre>
+      </div>
+
+      <div style="text-align: center; margin-top: 32px;">
+        <svg width="100%" max-width="800" height="200" viewBox="0 0 800 200">
+          <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+              <polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+            </marker>
+          </defs>
+          <polyline points="20,100 140,100 140,40 560,40 560,100 780,100" fill="none" stroke="#0071e3" stroke-width="3" stroke-dasharray="10,5" marker-end="url(#arrowhead)"/>
+          <circle cx="20" cy="100" r="12" fill="#0071e3"/>
+          <text x="20" y="130" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="12">起点</text>
+          <circle cx="780" cy="100" r="12" fill="#ff3b30"/>
+          <text x="780" y="130" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="12">终点</text>
+          <text x="350" y="20" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="11">敌人移动路线</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Game Flow -->
+  <section class="light-section">
+    <div class="content-wrapper">
+      <div class="section-header">
+        <h2>游戏流程</h2>
+        <p>从初始化到结果展示的完整流程</p>
+      </div>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3>1. 初始化</h3>
+          <p>加载场景，初始化 GameState</p>
+        </div>
+        <div class="card">
+          <h3>2. 等待放置</h3>
+          <p>显示地图，玩家点击放置猫塔</p>
+        </div>
+        <div class="card">
+          <h3>3. 波次开始</h3>
+          <p>点击"开始"按钮，启动波次</p>
+        </div>
+        <div class="card">
+          <h3>4. 敌人生成</h3>
+          <p>每秒生成一个敌人，共 10 个</p>
+        </div>
+        <div class="card">
+          <h3>5. 敌人移动</h3>
+          <p>沿路径点向终点移动</p>
+        </div>
+        <div class="card">
+          <h3>6. 塔攻击</h3>
+          <p>每秒对范围内敌人发射子弹</p>
+        </div>
+        <div class="card">
+          <h3>7. 子弹命中</h3>
+          <p>子弹到达敌人位置，造成伤害</p>
+        </div>
+        <div class="card">
+          <h3>8. 死亡处理</h3>
+          <p>敌人血量归零，移除并播放动画</p>
+        </div>
+        <div class="card">
+          <h3>9. 结束判断</h3>
+          <p>胜利：10 个敌人生成且全部死亡<br>失败：任意敌人到达终点</p>
+        </div>
+        <div class="card">
+          <h3>10. 结果显示</h3>
+          <p>显示 Victory! 或 Defeat!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- File Structure -->
+  <section class="dark-section">
+    <div class="content-wrapper">
+      <div class="section-header">
+        <h2>文件结构</h2>
+        <p>清晰的目录组织</p>
+      </div>
+
+      <div class="code-block">
+        <pre>assets/
+  scenes/
+    Game.fire              <span class="comment"># 主场景 (Cocos Creator)</span>
+  scripts/
+    GameManager.ts         <span class="comment"># 游戏状态管理</span>
+    Tower.ts               <span class="comment"># 防御塔逻辑</span>
+    Enemy.ts               <span class="comment"># 敌人逻辑</span>
+    Wave.ts                <span class="comment"># 波次管理</span>
+  textures/
+    map.png                <span class="comment"># 地图</span>
+    cat_tower.png          <span class="comment"># 猫塔精灵图</span>
+    enemy.png              <span class="comment"># 敌人精灵图</span>
+    bullet.png             <span class="comment"># 子弹精灵图</span></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verification Criteria -->
+  <section class="light-section">
+    <div class="content-wrapper">
+      <div class="section-header">
+        <h2>验收标准</h2>
+        <p>功能完成的判断条件</p>
+      </div>
+
+      <ul class="checklist">
+        <li>
+          <span class="check-box">✓</span>
+          <span>玩家可以点击地图放置猫塔（仅限一次）</span>
+        </li>
+        <li>
+          <span class="check-box">✓</span>
+          <span>点击"开始"按钮后，敌人从左侧进入并沿路径移动</span>
+        </li>
+        <li>
+          <span class="check-box">✓</span>
+          <span>猫塔自动攻击范围内敌人</span>
+        </li>
+        <li>
+          <span class="check-box">✓</span>
+          <span>子弹命中敌人造成伤害，敌人血条减少</span>
+        </li>
+        <li>
+          <span class="check-box">✓</span>
+          <span>敌人死亡后移除</span>
+        </li>
+        <li>
+          <span class="check-box">✓</span>
+          <span>敌人到达终点显示 "Defeat!"</span>
+        </li>
+        <li>
+          <span class="check-box">✓</span>
+          <span>所有敌人生成且死亡后显示 "Victory!"</span>
+        </li>
+        <li>
+          <span class="check-box">✓</span>
+          <span>微信小游戏可运行（主包 < 4MB）</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Excluded Features -->
+  <section class="dark-section">
+    <div class="content-wrapper">
+      <div class="section-header">
+        <h2>不包含功能</h2>
+        <p>MVP 版本刻意省略的功能</p>
+      </div>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3>经济系统</h3>
+          <p>无金币、无资源建造</p>
+        </div>
+        <div class="card">
+          <h3>升级系统</h3>
+          <p>无塔升级、无技能树</p>
+        </div>
+        <div class="card">
+          <h3>多张地图</h3>
+          <p>仅一张固定地图</p>
+        </div>
+        <div class="card">
+          <h3>宠物英雄</h3>
+          <p>无英雄技能</p>
+        </div>
+        <div class="card">
+          <h3>兵种克制</h3>
+          <p>无属性克制关系</p>
+        </div>
+        <div class="card">
+          <h3>离线收益</h3>
+          <p>无放置/挂机系统</p>
+        </div>
+        <div class="card">
+          <h3>音效音乐</h3>
+          <p>无音频资源</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>宠物猫狗塔防游戏 MVP &nbsp;|&nbsp; 2026</p>
+    <p style="margin-top: 8px;"><a href="d:/WX-Game/docs/superpowers/specs/2026-04-26-pet-tower-defense-mvp-design.md">查看源文档</a></p>
+  </footer>
+
+</body>
+</html>

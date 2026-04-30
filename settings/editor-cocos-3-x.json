@@ -1,0 +1,79 @@
+{
+  "last-modified": "Thu Apr 30 2026 17:00:00 GMT+0800",
+  "cache-codes": {},
+  "native-editor": {
+    "class-compile-mode": "0",
+    "combine-all-sprite-frame": true,
+    "compress-texture-png": false,
+    "design-height": 720,
+    "design-width": 1280,
+    "enable-auto-rc": false,
+    "enable-flatten-baked-cursor": true,
+    "enable-handbook": false,
+    "enable-scene-culling": false,
+    "execute-defined-by-editor": true,
+    "fitscreen-devices": [
+      "desktop"
+    ],
+    "generate-chunks": false,
+    "icon-generator-script": "",
+    "icon-png": "",
+    "jpag-png": false,
+    "keepsymnores": false,
+    "max-chunk-size": 512,
+    "minify-speed": 0,
+    "mountpoints": [],
+    "nativedroid-addition": "",
+    "nativedroid-precompiledheader": false,
+    "optimize-sprite-frame": false,
+    "particle-container": [],
+    "particle-pause-on-hide": true,
+    "prebuilt-shader-chunks": false,
+    "preview-height": 720,
+    "preview-width": 1280,
+    "realtimeschedulenodes": false,
+    "render-mode": 0,
+    "resolve-require-alias": {
+      "qimen-xc": "d:/minimax-image/texture/5.png",
+      "qimen-xcf": "d:/minimax-image/texture/5.png"
+    },
+    "runlimexe": false,
+    "separate-quads": false,
+    "shader-chunks": true,
+    "show-effect-static-mesh": false,
+    "show-fps": true,
+    "show-grids": false,
+    "show-normal": false,
+    "show-physics-shape": false,
+    "show-transform": false,
+    "simulator-win-size": {
+      "height": 720,
+      "width": 1280
+    },
+    "speed-percent": 1,
+    "static-settings": {
+      "enable": false,
+      "paths": [],
+      "use-cache": false
+    },
+    "tags": [],
+    "texture-convert-experimental": false,
+    "texture-threshold": 0.1,
+    "texture-transform": false,
+    "trigger-buttons": [],
+    "urequire-compiler-options": {
+      "transforms": [],
+      "transformRequset": []
+    },
+    "use-default-view": true,
+    "use-custom-doc": false,
+    "use-fake-audio-preload": false,
+    "uses-virtual-resolution": false,
+    "virtual-resolution": {
+      "auto": false,
+      "height": 720,
+      "width": 1280
+    },
+    "wechatgame-subpackage": true
+  }
+}

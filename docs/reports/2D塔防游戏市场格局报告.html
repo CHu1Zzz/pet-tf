@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D塔防微信小游戏市场格局报告 | 2026年4月</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Starbucks Color System */
+            --starbucks-green: #006241;
+            --green-accent: #00754A;
+            --house-green: #1E3932;
+            --green-uplift: #2b5148;
+            --green-light: #d4e9e2;
+            --gold: #cba258;
+            --gold-light: #dfc49d;
+            --gold-lightest: #faf6ee;
+            --cream: #f2f0eb;
+            --ceramic: #edebe9;
+            --white: #ffffff;
+            --text-black: rgba(0, 0, 0, 0.87);
+            --text-black-soft: rgba(0, 0, 0, 0.58);
+            --text-white: #ffffff;
+            --text-white-soft: rgba(255, 255, 255, 0.70);
+
+            /* Spacing */
+            --space-1: 0.4rem;
+            --space-2: 0.8rem;
+            --space-3: 1.6rem;
+            --space-4: 2.4rem;
+            --space-5: 3.2rem;
+            --space-6: 4rem;
+            --space-7: 4.8rem;
+            --space-8: 5.6rem;
+            --space-9: 6.4rem;
+
+            /* Typography */
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-serif: 'Noto Serif SC', 'Georgia', serif;
+
+            /* Shadows */
+            --shadow-card: 0 0 0.5px rgba(0,0,0,0.14), 0 1px 1px rgba(0,0,0,0.24);
+            --shadow-nav: 0 1px 3px rgba(0,0,0,0.1), 0 2px 2px rgba(0,0,0,0.06), 0 0 2px rgba(0,0,0,0.07);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--cream);
+            color: var(--text-black);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            padding: 1.6rem 2.4rem;
+            box-shadow: var(--shadow-nav);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        .nav-logo {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--starbucks-green), var(--green-accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+
+        .nav-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--house-green);
+            letter-spacing: -0.01em;
+        }
+
+        .nav-date {
+            font-size: 1.2rem;
+            color: var(--text-black-soft);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 72px;
+            background: linear-gradient(135deg, var(--house-green) 0%, var(--starbucks-green) 100%);
+            padding: var(--space-9) var(--space-4);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--house-green);
+            padding: 0.6rem 1.6rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-4);
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: var(--space-3);
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            color: var(--text-white-soft);
+            margin-bottom: var(--space-5);
+            font-weight: 400;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-4);
+            flex-wrap: wrap;
+        }
+
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--text-white-soft);
+            font-size: 1.4rem;
+        }
+
+        .hero-meta-icon {
+            width: 20px;
+            height: 20px;
+            opacity: 0.8;
+        }
+
+        /* Main Content */
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-7) var(--space-4);
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: var(--space-8);
+        }
+
+        .section-header {
+            margin-bottom: var(--space-5);
+        }
+
+        .section-number {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--green-accent);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: var(--space-2);
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            color: var(--starbucks-green);
+            letter-spacing: -0.01em;
+            margin-bottom: var(--space-2);
+        }
+
+        .section-desc {
+            font-size: 1.6rem;
+            color: var(--text-black-soft);
+            max-width: 700px;
+        }
+
+        /* Card Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-4);
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: var(--space-4);
+            box-shadow: var(--shadow-card);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: var(--space-3);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--green-light), var(--cream));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--starbucks-green);
+            font-size: 2rem;
+        }
+
+        .card-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--house-green);
+        }
+
+        .card-value {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--starbucks-green);
+            line-height: 1.2;
+            margin-bottom: 0.4rem;
+        }
+
+        .card-label {
+            font-size: 1.3rem;
+            color: var(--text-black-soft);
+        }
+
+        /* Data Table */
+        .data-table {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow-card);
+            overflow: hidden;
+        }
+
+        .table-header {
+            background: var(--house-green);
+            padding: var(--space-3) var(--space-4);
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: var(--space-3);
+        }
+
+        .table-header-cell {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-white);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .table-row {
+            padding: var(--space-3) var(--space-4);
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: var(--space-3);
+            border-bottom: 1px solid var(--cream);
+            transition: background 0.15s ease;
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        .table-row:hover {
+            background: var(--cream);
+        }
+
+        .table-cell {
+            font-size: 1.4rem;
+            color: var(--text-black);
+            display: flex;
+            align-items: center;
+        }
+
+        .table-cell-highlight {
+            color: var(--starbucks-green);
+            font-weight: 600;
+        }
+
+        /* Feature Band */
+        .feature-band {
+            background: var(--house-green);
+            border-radius: 16px;
+            padding: var(--space-6);
+            margin: var(--space-6) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-band::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--green-uplift) 0%, transparent 70%);
+            opacity: 0.3;
+        }
+
+        .feature-band-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-band h3 {
+            font-family: var(--font-serif);
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: var(--space-3);
+        }
+
+        .feature-band p {
+            font-size: 1.6rem;
+            color: var(--text-white-soft);
+            margin-bottom: var(--space-4);
+            max-width: 600px;
+        }
+
+        .feature-band-stats {
+            display: flex;
+            gap: var(--space-6);
+            flex-wrap: wrap;
+        }
+
+        .feature-stat {
+            text-align: left;
+        }
+
+        .feature-stat-value {
+            font-size: 3.6rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .feature-stat-label {
+            font-size: 1.3rem;
+            color: var(--text-white-soft);
+        }
+
+        /* Category Cards */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: var(--space-4);
+        }
+
+        .category-card {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow-card);
+            overflow: hidden;
+        }
+
+        .category-header {
+            padding: var(--space-4);
+            background: linear-gradient(135deg, var(--starbucks-green), var(--green-accent));
+            color: var(--text-white);
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+
+        .category-desc {
+            font-size: 1.3rem;
+            color: var(--text-white-soft);
+        }
+
+        .category-body {
+            padding: var(--space-4);
+        }
+
+        .game-list {
+            list-style: none;
+        }
+
+        .game-item {
+            padding: var(--space-2) 0;
+            border-bottom: 1px solid var(--cream);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: var(--space-3);
+        }
+
+        .game-item:last-child {
+            border-bottom: none;
+        }
+
+        .game-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--house-green);
+        }
+
+        .game-dev {
+            font-size: 1.2rem;
+            color: var(--text-black-soft);
+            margin-top: 0.2rem;
+        }
+
+        .game-badge {
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            background: var(--green-light);
+            color: var(--starbucks-green);
+            white-space: nowrap;
+        }
+
+        .game-badge-gold {
+            background: var(--gold-lightest);
+            color: var(--gold);
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, var(--gold-lightest), var(--cream));
+            border-left: 4px solid var(--gold);
+            border-radius: 0 12px 12px 0;
+            padding: var(--space-4);
+            margin: var(--space-4) 0;
+        }
+
+        .highlight-box h4 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--house-green);
+            margin-bottom: var(--space-2);
+        }
+
+        .highlight-box p {
+            font-size: 1.4rem;
+            color: var(--text-black-soft);
+            line-height: 1.7;
+        }
+
+        /* Tech Stack */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: var(--space-3);
+        }
+
+        .tech-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: var(--space-4);
+            box-shadow: var(--shadow-card);
+            text-align: center;
+        }
+
+        .tech-name {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--starbucks-green);
+            margin-bottom: var(--space-2);
+        }
+
+        .tech-tag {
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: var(--space-2);
+        }
+
+        .tech-tag-recommend {
+            background: var(--green-light);
+            color: var(--starbucks-green);
+        }
+
+        .tech-tag-good {
+            background: var(--gold-lightest);
+            color: var(--gold);
+        }
+
+        .tech-desc {
+            font-size: 1.3rem;
+            color: var(--text-black-soft);
+        }
+
+        /* Limit List */
+        .limit-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-3);
+        }
+
+        .limit-item {
+            background: var(--ceramic);
+            padding: var(--space-3);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        .limit-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--house-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-white);
+            font-size: 1.4rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .limit-info {
+            flex: 1;
+        }
+
+        .limit-value {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--house-green);
+        }
+
+        .limit-label {
+            font-size: 1.2rem;
+            color: var(--text-black-soft);
+        }
+
+        /* Tier Analysis */
+        .tier-container {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow-card);
+            padding: var(--space-5);
+        }
+
+        .tier-tier {
+            margin-bottom: var(--space-5);
+            padding-bottom: var(--space-5);
+            border-bottom: 1px solid var(--cream);
+        }
+
+        .tier-tier:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .tier-header {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: var(--space-3);
+        }
+
+        .tier-badge {
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .tier-badge-first {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--house-green);
+        }
+
+        .tier-badge-second {
+            background: var(--green-light);
+            color: var(--starbucks-green);
+        }
+
+        .tier-badge-third {
+            background: var(--ceramic);
+            color: var(--text-black-soft);
+        }
+
+        .tier-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--house-green);
+        }
+
+        .tier-games {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .tier-game {
+            background: var(--cream);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-size: 1.3rem;
+            color: var(--text-black);
+        }
+
+        /* Suggestions */
+        .suggestion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-4);
+        }
+
+        .suggestion-card {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow-card);
+            padding: var(--space-4);
+            border-top: 4px solid var(--green-accent);
+        }
+
+        .suggestion-card:nth-child(2) {
+            border-top-color: var(--gold);
+        }
+
+        .suggestion-card:nth-child(3) {
+            border-top-color: var(--starbucks-green);
+        }
+
+        .suggestion-card:nth-child(4) {
+            border-top-color: var(--green-uplift);
+        }
+
+        .suggestion-number {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--green-accent);
+            margin-bottom: var(--space-2);
+        }
+
+        .suggestion-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--house-green);
+            margin-bottom: var(--space-2);
+        }
+
+        .suggestion-desc {
+            font-size: 1.3rem;
+            color: var(--text-black-soft);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--house-green);
+            padding: var(--space-7) var(--space-4);
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer h3 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            color: var(--text-white);
+            margin-bottom: var(--space-4);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-bottom: var(--space-5);
+        }
+
+        .footer-link {
+            color: var(--text-white-soft);
+            font-size: 1.4rem;
+            text-decoration: none;
+            transition: color 0.15s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--text-white);
+        }
+
+        .footer-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+            margin: 0 auto var(--space-4);
+        }
+
+        .footer-copy {
+            font-size: 1.2rem;
+            color: var(--text-white-soft);
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1.2rem 2.4rem;
+            border-radius: 50px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--green-accent);
+            color: var(--text-white);
+        }
+
+        .btn-primary:hover {
+            background: var(--starbucks-green);
+            transform: scale(0.98);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-white);
+            border: 2px solid var(--text-white);
+        }
+
+        .btn-outline:hover {
+            background: var(--text-white);
+            color: var(--house-green);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                padding: 1.2rem 1.6rem;
+            }
+
+            .nav-title {
+                font-size: 1.4rem;
+            }
+
+            .hero {
+                padding: var(--space-7) var(--space-3);
+            }
+
+            .hero-meta {
+                gap: var(--space-3);
+            }
+
+            .main {
+                padding: var(--space-5) var(--space-3);
+            }
+
+            .table-header,
+            .table-row {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .table-header-cell:nth-child(3),
+            .table-header-cell:nth-child(4),
+            .table-cell:nth-child(3),
+            .table-cell:nth-child(4) {
+                display: none;
+            }
+
+            .feature-band {
+                padding: var(--space-4);
+            }
+
+            .feature-stat-value {
+                font-size: 2.8rem;
+            }
+
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        /* Print Styles */
+        @media print {
+            .nav, .footer {
+                display: none;
+            }
+
+            .hero {
+                margin-top: 0;
+            }
+
+            body {
+                background: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-brand">
+            <div class="nav-logo">T</div>
+            <div>
+                <div class="nav-title">市场格局报告</div>
+                <div class="nav-date">2026年4月</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">市场研究报告</span>
+            <h1>2D塔防微信小游戏<br>市场格局报告</h1>
+            <p class="hero-subtitle">深度分析全球2D塔防游戏市场现状与未来趋势</p>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <svg class="hero-meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                    <span>报告日期：2026年4月</span>
+                </div>
+                <div class="hero-meta-item">
+                    <svg class="hero-meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                    <span>研究范围：全球2D塔防市场</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Section 1: Market Size -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01 · 市场规模</div>
+                <h2 class="section-title">全球塔防游戏市场概况</h2>
+                <p class="section-desc">基于最新行业数据分析，中国塔防手游市场持续增长，用户规模超过1.2亿</p>
+            </div>
+
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="card-title">用户规模</div>
+                    </div>
+                    <div class="card-value">1.2亿+</div>
+                    <div class="card-label">中国塔防手游用户（2023年底）</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                            </svg>
+                        </div>
+                        <div class="card-title">年增长率</div>
+                    </div>
+                    <div class="card-value">10%</div>
+                    <div class="card-label">用户规模同比增长率</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="card-title">年轻用户</div>
+                    </div>
+                    <div class="card-value">65%</div>
+                    <div class="card-label">18-35岁用户占比</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="card-title">女性玩家</div>
+                    </div>
+                    <div class="card-value">35%</div>
+                    <div class="card-label">女性玩家比例（持续上升）</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: WeChat Mini Program Data -->
+        <section class="section">
+            <div class="feature-band">
+                <div class="feature-band-content">
+                    <h3>微信小游戏平台数据</h3>
+                    <p>微信小游戏生态持续繁荣，用户总量达10亿，月活跃用户5亿，市场规模快速增长</p>
+                    <div class="feature-band-stats">
+                        <div class="feature-stat">
+                            <div class="feature-stat-value">10亿</div>
+                            <div class="feature-stat-label">用户总量</div>
+                        </div>
+                        <div class="feature-stat">
+                            <div class="feature-stat-value">5亿</div>
+                            <div class="feature-stat-label">月活跃用户</div>
+                        </div>
+                        <div class="feature-stat">
+                            <div class="feature-stat-value">610亿</div>
+                            <div class="feature-stat-label">2025年预计规模（人民币）</div>
+                        </div>
+                        <div class="feature-stat">
+                            <div class="feature-stat-value">+22%</div>
+                            <div class="feature-stat-label">同比增长</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-value">500亿</div>
+                    <div class="card-label">2024年小游戏市场规模（人民币）</div>
+                </div>
+                <div class="card">
+                    <div class="card-value">610亿</div>
+                    <div class="card-label">2025年预计市场规模（人民币）</div>
+                </div>
+                <div class="card">
+                    <div class="card-value">22%</div>
+                    <div class="card-label">同比增长</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Commercial Performance -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02 · 商业表现</div>
+                <h2 class="section-title">代表作商业成绩</h2>
+            </div>
+
+            <div class="data-table">
+                <div class="table-header">
+                    <div class="table-header-cell">游戏名称</div>
+                    <div class="table-header-cell">平台</div>
+                    <div class="table-header-cell">商业成绩</div>
+                    <div class="table-header-cell">排名</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell table-cell-highlight">《向僵尸开炮》</div>
+                    <div class="table-cell">微信小游戏/iOS</div>
+                    <div class="table-cell">iOS全球总收入约13.2亿人民币</div>
+                    <div class="table-cell"><span class="game-badge game-badge-gold">TOP 3</span></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell table-cell-highlight">《寻道大千》</div>
+                    <div class="table-cell">微信小游戏</div>
+                    <div class="table-cell">月活6773万，断层式领先</div>
+                    <div class="table-cell"><span class="game-badge game-badge-gold">TOP 1</span></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">《无尽冬日》</div>
+                    <div class="table-cell">微信小游戏</div>
+                    <div class="table-cell">头部阵营之一</div>
+                    <div class="table-cell"><span class="game-badge">热门</span></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">《植物大战僵尸》</div>
+                    <div class="table-cell">微信小程序</div>
+                    <div class="table-cell">经典游戏，仍有数千万人玩</div>
+                    <div class="table-cell"><span class="game-badge">经典</span></div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>品类趋势洞察</h4>
+                <p>塔防类游戏跃升至微信小游戏消耗第二梯队，放置类塔防回暖明显，新品爆款频繁出现。2024-2025年，融合Roguelike元素的塔防游戏表现尤为亮眼。</p>
+            </div>
+        </section>
+
+        <!-- Section 4: Theme Styles -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03 · 主题风格</div>
+                <h2 class="section-title">主题风格板块分析</h2>
+                <p class="section-desc">从科幻到卡通，多元化题材满足不同玩家群体需求</p>
+            </div>
+
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-title">科幻/未来风格</div>
+                        <div class="category-desc">太空站防御、机器人入侵、赛博朋克</div>
+                    </div>
+                    <div class="category-body">
+                        <ul class="game-list">
+                            <li class="game-item">
+                                <div>
+                                    <div class="game-name">Galaxy Wars Tower Defense</div>
+                                    <div class="game-dev">Cat Studio Inc · 星球大战题材</div>
+                                </div>
+                                <span class="game-badge">早期热门</span>
+                            </li>
+                            <li class="game-item">
+                                <div>
+                                    <div class="game-name">锡安塔防</div>
+                                    <div class="game-dev">人类vs机器人，地下都市背景</div>
+                                </div>
+                                <span class="game-badge">免费热门</span>
+                            </li>
+                            <li class="game-item">
+                                <div>
+                                    <div class="game-name">蒸汽朋克塔防</div>
+                                    <div class="game-dev">Chillingo Ltd · 麒麟狗发行</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-header" style="background: linear-gradient(135deg, #8B4513, #A0522D);">
+                        <div class="category-title">中世纪/奇幻风格</div>
+                        <div class="category-desc">城堡防守、魔法生物、骑士与恶龙</div>
+                    </div>
+                    <div class="category-body">
+                        <ul class="game-list">
+                            <li class="game-item">
+                                <div>
+                                    <div class="game-name">Kingdom Rush 系列</div>
+                                    <div class="game-dev">Ironhide（乌拉圭）· 塔防神作</div>
+                                </div>
+                                <span class="game-badge game-badge-gold">全球热销</span>
+                            </li>
+                            <li class="game-item">
+                                <div>
+                                    <div class="game-name">王国保卫战：起源</div>
+                                    <div class="game-dev">被誉为"塔防金字塔"</div>
+                                </div>
+                            </li>
+                            <li class="game-item">
+                                <div>
+                                    <div class="game-name">王国保卫战：复仇</div>
+                                    <div class="game-dev">经典IP正统续作</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-header" style="background: linear-gradient(135deg, #FF6B6B, #FF8E53);">
+                        <div class="category-title">卡通/可爱风格</div>
+                        <div class="category-desc">可爱画风、植物防御、轻松氛围</div>
+                    </div>
+                    <div class="category-body">
+                        <ul class="game-list">
+                            <li class="game-item">
+                                <div>
+                                    <div class="game-name">植物大战僵尸</div>
+                                    <div class="game-dev">PopCap Games (EA) · 全球数亿玩家</div>
+                                </div>
+                                <span class="game-badge game-badge-gold">全球经典</span>
+                            </li>
+                            <li class="game-item">
+                                <div>
+                                    <div class="game-name">阿兹卡特塔防</div>
+                                    <div class="game-dev">15种防御塔，多种怪物类型</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-header" style="background: linear-gradient(135deg, #4A5568, #2D3748);">
+                        <div class="category-title">僵尸/末日题材</div>
+                        <div class="category-desc">废土求生、僵尸围城、生存压力</div>
+                    </div>
+                    <div class="category-body">
+                        <ul class="game-list">
+                            <li class="game-item">
+                                <div>
+                                    <div class="game-name">向僵尸开炮</div>
+                                    <div class="game-dev">心动公司 · 竖屏射击+塔防，肉鸽玩法</div>
+                                </div>
+                                <span class="game-badge game-badge-gold">13.2亿收入</span>
+                            </li>
+                            <li class="game-item">
+                                <div>
+                                    <div class="game-name">豪华僵尸塔防</div>
+                                    <div class="game-dev">6种炮塔，7种僵尸</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Gameplay Types -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04 · 玩法类型</div>
+                <h2 class="section-title">玩法类型板块</h2>
+            </div>
+
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon" style="background: linear-gradient(135deg, #E8F5E9, #C8E6C9);">🎯</div>
+                        <div class="card-title">传统TD</div>
+                    </div>
+                    <p style="font-size: 1.4rem; color: var(--text-black-soft); margin-bottom: 1.2rem;">敌人沿固定路线进攻，玩家在路线旁建造防御塔</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.6rem;">
+                        <span class="game-badge">Kingdom Rush</span>
+                        <span class="game-badge">植物大战僵尸</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon" style="background: linear-gradient(135deg, #FFF3E0, #FFE0B2);">🔫</div>
+                        <div class="card-title">射击+塔防融合</div>
+                    </div>
+                    <p style="font-size: 1.4rem; color: var(--text-black-soft); margin-bottom: 1.2rem;">玩家操作角色射击，同时建设防御塔</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.6rem;">
+                        <span class="game-badge game-badge-gold">《向僵尸开炮》</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon" style="background: linear-gradient(135deg, #E3F2FD, #BBDEFB);">⏰</div>
+                        <div class="card-title">放置/挂机塔防</div>
+                    </div>
+                    <p style="font-size: 1.4rem; color: var(--text-black-soft); margin-bottom: 1.2rem;">自动战斗，角色自动攻击，侧重战力养成</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.6rem;">
+                        <span class="game-badge game-badge-gold">《寻道大千》月活6773万</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon" style="background: linear-gradient(135deg, #F3E5F5, #E1BEE7);">🎲</div>
+                        <div class="card-title">Roguelike + TD</div>
+                    </div>
+                    <p style="font-size: 1.4rem; color: var(--text-black-soft); margin-bottom: 1.2rem;">随机元素，每次游戏体验不同，局外养成</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.6rem;">
+                        <span class="game-badge">局外战力养成</span>
+                        <span class="game-badge">局内肉鸽闯关</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Tech Development -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05 · 技术开发</div>
+                <h2 class="section-title">技术开发要点</h2>
+                <p class="section-desc">微信小游戏开发框架与平台限制分析</p>
+            </div>
+
+            <div class="section" style="margin-bottom: var(--space-4);">
+                <h3 style="font-size: 1.8rem; font-weight: 600; color: var(--house-green); margin-bottom: var(--space-3);">推荐开发框架</h3>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <div class="tech-name">Cocos Creator</div>
+                        <span class="tech-tag tech-tag-recommend">推荐</span>
+                        <div class="tech-desc">2D首选，微信官方推荐，性能好，社区资源丰富</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-name">LayaAir</div>
+                        <span class="tech-tag tech-tag-good">良好</span>
+                        <div class="tech-desc">3D强，性能优秀，适合3D塔防</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-name">Egret</div>
+                        <span class="tech-tag tech-tag-good">良好</span>
+                        <div class="tech-desc">TypeScript支持，成熟稳定</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-name">Unity</div>
+                        <span class="tech-tag">需转换</span>
+                        <div class="tech-desc">工业标准，通过转换工具适配</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 style="font-size: 1.8rem; font-weight: 600; color: var(--house-green); margin-bottom: var(--space-3);">微信小游戏技术限制</h3>
+                <div class="data-table">
+                    <div class="table-header">
+                        <div class="table-header-cell">限制项</div>
+                        <div class="table-header-cell">数值</div>
+                        <div class="table-header-cell">说明</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell table-cell-highlight">主包大小</div>
+                        <div class="table-cell">4MB</div>
+                        <div class="table-cell">必须小于等于4MB</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell table-cell-highlight">分包大小</div>
+                        <div class="table-cell">4MB</div>
+                        <div class="table-cell">每个分包不超过4MB</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell table-cell-highlight">总包体限制</div>
+                        <div class="table-cell">12MB</div>
+                        <div class="table-cell">虚拟支付可达30MB</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">网络要求</div>
+                        <div class="table-cell">HTTPS</div>
+                        <div class="table-cell">必须使用HTTPS协议</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">DOM/BOM</div>
+                        <div class="table-cell">不支持</div>
+                        <div class="table-cell">无法使用传统Web API</div>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>解决方案</h4>
+                    <p>资源CDN化，动态加载资源包。主包仅包含核心代码，资源托管至CDN实现按需加载，有效控制包体大小。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Competition Analysis -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">06 · 竞争格局</div>
+                <h2 class="section-title">竞争格局分析</h2>
+            </div>
+
+            <div class="tier-container">
+                <div class="tier-tier">
+                    <div class="tier-header">
+                        <span class="tier-badge tier-badge-first">第一梯队</span>
+                        <span class="tier-title">头部爆款</span>
+                    </div>
+                    <div class="tier-games">
+                        <span class="tier-game">《寻道大千》 MAU 6773万</span>
+                        <span class="tier-game">《无尽冬日》</span>
+                        <span class="tier-game">《海蛇传奇欢乐版》</span>
+                    </div>
+                </div>
+
+                <div class="tier-tier">
+                    <div class="tier-header">
+                        <span class="tier-badge tier-badge-second">第二梯队</span>
+                        <span class="tier-title">热门品类</span>
+                    </div>
+                    <div class="tier-games">
+                        <span class="tier-game">塔防品类消耗升至第二梯队</span>
+                        <span class="tier-game">放置类回暖</span>
+                        <span class="tier-game">模拟经营快速增长</span>
+                    </div>
+                </div>
+
+                <div class="tier-tier">
+                    <div class="tier-header">
+                        <span class="tier-badge tier-badge-third">长尾市场</span>
+                        <span class="tier-title">细分机会</span>
+                    </div>
+                    <div class="tier-games">
+                        <span class="tier-game">大量中小团队塔防游戏</span>
+                        <span class="tier-game">差异化题材有机会</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: Success Factors -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">07 · 成功要素</div>
+                <h2 class="section-title">成功要素总结</h2>
+            </div>
+
+            <div class="suggestion-grid">
+                <div class="suggestion-card">
+                    <div class="suggestion-number">01</div>
+                    <div class="suggestion-title">题材选择</div>
+                    <div class="suggestion-desc">僵尸/末日、放置+塔防融合是目前爆款方向，验证可行的赛道更容易成功</div>
+                </div>
+
+                <div class="suggestion-card">
+                    <div class="suggestion-number">02</div>
+                    <div class="suggestion-title">玩法创新</div>
+                    <div class="suggestion-desc">Roguelike元素成为差异化关键，局外战力养成+局内肉鸽闯关是主流融合方向</div>
+                </div>
+
+                <div class="suggestion-card">
+                    <div class="suggestion-number">03</div>
+                    <div class="suggestion-title">美术风格</div>
+                    <div class="suggestion-desc">卡通/可爱风格受众广，易传播；科幻/废土吸引核心玩家</div>
+                </div>
+
+                <div class="suggestion-card">
+                    <div class="suggestion-number">04</div>
+                    <div class="suggestion-title">商业化</div>
+                    <div class="suggestion-desc">内购+广告双变现，虚拟支付适合塔防品类，用户付费意愿强</div>
+                </div>
+
+                <div class="suggestion-card">
+                    <div class="suggestion-number">05</div>
+                    <div class="suggestion-title">技术选型</div>
+                    <div class="suggestion-desc">Cocos Creator + 微信小游戏生态成熟，官方推荐，社区资源丰富</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 9: Development Suggestions -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">08 · 开发建议</div>
+                <h2 class="section-title">开发建议</h2>
+            </div>
+
+            <div class="highlight-box" style="margin-bottom: var(--space-4);">
+                <h4>风险提示</h4>
+                <p>包体限制严格需提前规划CDN资源架构；微信审核机制需提前了解合规要求；塔防品类竞争激烈需差异化题材或玩法</p>
+            </div>
+
+            <h3 style="font-size: 1.8rem; font-weight: 600; color: var(--house-green); margin-bottom: var(--space-3);">建议方向</h3>
+            <div class="suggestion-grid">
+                <div class="suggestion-card">
+                    <div class="suggestion-number">🔥 爆款方向</div>
+                    <div class="suggestion-title">僵尸+肉鸽+射击融合</div>
+                    <div class="suggestion-desc">验证可行，月流水过亿。《向僵尸开炮》已验证此方向的市场潜力</div>
+                </div>
+
+                <div class="suggestion-card">
+                    <div class="suggestion-number">📈 增长明显</div>
+                    <div class="suggestion-title">放置+塔防</div>
+                    <div class="suggestion-desc">《寻道大千》验证可行性，MAU 6773万断层式领先</div>
+                </div>
+
+                <div class="suggestion-card">
+                    <div class="suggestion-number">🎃 品牌延伸</div>
+                    <div class="suggestion-title">万圣节/季节主题</div>
+                    <div class="suggestion-desc">契合业务特性，可做品牌延伸，季节性活动效果好</div>
+                </div>
+
+                <div class="suggestion-card">
+                    <div class="suggestion-number">🐱 首发测试</div>
+                    <div class="suggestion-title">卡通+轻度</div>
+                    <div class="suggestion-desc">受众广，易传播，适合首发测试验证玩法</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>参考资料</h3>
+            <div class="footer-links">
+                <a href="https://developers.weixin.qq.com/minigame/dev/guide/" target="_blank" class="footer-link">微信小游戏官方文档</a>
+                <a href="#" class="footer-link">DataEye研究院：2024小游戏数据观察</a>
+                <a href="#" class="footer-link">Sensor Tower：2024移动游戏市场报告</a>
+                <a href="#" class="footer-link">七麦数据：《向僵尸开炮》收入分析</a>
+            </div>
+            <div class="footer-divider"></div>
+            <p class="footer-copy">© 2026年4月 · 2D塔防微信小游戏市场格局报告</p>
+        </div>
+    </footer>
+</body>
+</html>
