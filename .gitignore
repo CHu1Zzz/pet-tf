@@ -1,0 +1,13 @@
+# Cocos Creator
+project.private.config.json
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build output
+build/

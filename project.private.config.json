@@ -1,6 +1,7 @@
 {
   "libVersion": "3.14.3",
   "projectname": "WX-Game",
+  "appid": "wx95928ba693fe6e0d",
   "setting": {
     "urlCheck": true,
     "coverView": true,
