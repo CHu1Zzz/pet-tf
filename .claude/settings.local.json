@@ -13,7 +13,8 @@
       "mcp__plugin_context7_context7__resolve-library-id",
       "Bash(dir \"d:\\\\WX-Game\")",
       "mcp__plugin_context7_context7__query-docs",
-      "Bash(dir \"d:\\\\WX-Game\\\\\" 2>/dev/null)"
+      "Bash(dir \"d:\\\\WX-Game\\\\\" 2>/dev/null)",
+      "Bash(git checkout *)"
     ],
     "additionalDirectories": [
       "d:\\WX-Game\\docs\\superpowers"

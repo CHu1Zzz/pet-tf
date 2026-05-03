@@ -1,0 +1,6 @@
+{
+  "deviceOrientation": "landscape",
+  "showStatusBar": false,
+  "networkTimeout": 60000,
+  "assetsVersion": "1.0.0"
+}

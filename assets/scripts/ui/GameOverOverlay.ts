@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Button, Label } from 'cc';
+import { _decorator, Component, Node, Button, Label, director } from 'cc';
 import { GAME_EVENTS } from '../core/Constants';
 import { EventBus } from '../core/EventBus';
 import { GameManager } from '../core/GameManager';
@@ -54,7 +54,7 @@ export class GameOverOverlay extends Component {
       gameManager.startGame();
     }
 
-    cc.director.loadScene('GamePlay');
+    director.loadScene('Game');
   }
 
   onMenuClicked() {
@@ -63,6 +63,6 @@ export class GameOverOverlay extends Component {
       gameManager.returnToMenu();
     }
 
-    cc.director.loadScene('MainMenu');
+    director.loadScene('Game');
   }
 }

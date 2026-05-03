@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Button, Label } from 'cc';
+import { _decorator, Component, Node, Button, Label, director } from 'cc';
 import { EventBus } from '../core/EventBus';
 import { GameManager } from '../core/GameManager';
 
@@ -32,10 +32,10 @@ export class MainMenu extends Component {
     }
 
     // Load game scene
-    const sceneName = 'GamePlay';
-    const scene = cc.director.getScene();
+    const sceneName = 'Game';
+    const scene = director.getScene();
     if (scene && scene.name !== sceneName) {
-      cc.director.loadScene(sceneName);
+      director.loadScene(sceneName);
     }
   }
 }

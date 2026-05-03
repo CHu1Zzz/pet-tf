@@ -73,14 +73,6 @@ export class GameManager extends Component {
     this.updateHUD();
   }
 
-  private registerEvents() {
-    EventBus.on(GAME_EVENTS.ENEMY_KILLED, this.onEnemyKilled, this);
-    EventBus.on(GAME_EVENTS.ENEMY_ESCAPED, this.onEnemyEscaped, this);
-    EventBus.on(GAME_EVENTS.WAVE_COMPLETED, this.onWaveCompleted, this);
-    EventBus.on(GAME_EVENTS.GOLD_CHANGED, this.updateHUD, this);
-    EventBus.on(GAME_EVENTS.LIVES_CHANGED, this.updateHUD, this);
-  }
-
   // ============ Game State Transitions ============
 
   startGame() {

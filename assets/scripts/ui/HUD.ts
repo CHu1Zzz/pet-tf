@@ -31,21 +31,6 @@ export class HUD extends Component {
     this.setupButtonHandlers();
   }
 
-  onDestroy() {
-    EventBus.off(GAME_EVENTS.GOLD_CHANGED, this.onGoldChanged, this);
-    EventBus.off(GAME_EVENTS.LIVES_CHANGED, this.onLivesChanged, this);
-    EventBus.off(GAME_EVENTS.WAVE_STARTED, this.onWaveStarted, this);
-    EventBus.off(GAME_EVENTS.WAVE_COMPLETED, this.onWaveCompleted, this);
-    EventBus.off(GAME_EVENTS.ENEMY_SPAWNED, this.onEnemySpawned, this);
-    EventBus.off(GAME_EVENTS.ENEMY_DIED, this.onEnemyDied, this);
-  }
-
-  private setupButtonHandlers() {
-    if (this.startWaveButton) {
-      this.startWaveButton.node.on(Button.EventType.CLICK, this.onStartWaveClicked, this);
-    }
-  }
-
   private registerEvents() {
     EventBus.on(GAME_EVENTS.GOLD_CHANGED, this.onGoldChanged, this);
     EventBus.on(GAME_EVENTS.LIVES_CHANGED, this.onLivesChanged, this);
@@ -53,6 +38,12 @@ export class HUD extends Component {
     EventBus.on(GAME_EVENTS.WAVE_COMPLETED, this.onWaveCompleted, this);
     EventBus.on(GAME_EVENTS.ENEMY_SPAWNED, this.onEnemySpawned, this);
     EventBus.on(GAME_EVENTS.ENEMY_DIED, this.onEnemyDied, this);
+  }
+
+  private setupButtonHandlers() {
+    if (this.startWaveButton) {
+      this.startWaveButton.node.on(Button.EventType.CLICK, this.onStartWaveClicked, this);
+    }
   }
 
   onDestroy() {
